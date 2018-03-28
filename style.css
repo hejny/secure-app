@@ -2,7 +2,36 @@ html {
     font-family: Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;
 }
 
-
 label{
     display: block;
+}
+
+.success, .error{
+    padding: 5px;
+}
+
+.success{
+    background-color: #00ff00;
+}
+
+.error{
+    background-color: #ff0000;
+}
+
+.post{
+    margin: 5px;
+    padding: 10px;
+    border: 1px solid #cccccc;
+}
+
+.post .content{
+
+}
+
+.post .actions a{
+    text-decoration: none;
+    color: white;
+    background-color: blue;
+    padding: 5px;
+    border-radius: 3px;
 }

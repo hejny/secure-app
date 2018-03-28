@@ -4,6 +4,9 @@ error_reporting(E_ALL ^ E_NOTICE);
 require_once __DIR__.'/common/db.php';
 session_start();
 
+if($_REQUEST['action']=='logout'){
+    unset($_SESSION['id']);
+}
 ?>
 <!DOCTYPE html>
 <html lang="cs" dir="ltr">
@@ -17,9 +20,14 @@ session_start();
 
     <nav>
         <ul>
-            <a href="?page=wall"><li>wall</li></a>
+            <a href="?page=wall"><li>Wall</li></a>
+
+            <?php if(!$_SESSION['id']){ ?>
             <a href="?page=login"><li>Login</li></a>
             <a href="?page=register"><li>Register</li></a>
+            <?php }else{ ?>
+            <a href="?action=logout"><li>Logout</li></a>
+            <?php } ?>
         </ul>
     </nav>
 
