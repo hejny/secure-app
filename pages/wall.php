@@ -51,7 +51,6 @@ foreach($result as $row){
         <?=$row['content']?>
     </div>
     <div class="actions">
-
         <span class="author">
             <?=$row['author']?>
         </span>
@@ -59,10 +58,15 @@ foreach($result as $row){
             <?=$row['created']?>
         </span>
 
+        <?php if($row['likes']){ ?>
+        <span class="likes">
+            <?=$row['likes']?>👍
+        </span>
+        <?php } ?>
 
-        <a href="?page=wall&amp;like=<?=$row['id']?>">Like (<?=$row['likes']?>)</a>
         <?php if($_SESSION['id']==$row['user_id']){ ?>
-        <a href="?page=wall&amp;delete=<?=$row['id']?>" onclick="return confirm('Are you sure?')">Delete</a>
+            <a href="?page=wall&amp;like=<?=$row['id']?>">Like</a>
+            <a href="?page=wall&amp;delete=<?=$row['id']?>" onclick="return confirm('Are you sure?')">Delete</a>
         <?php } ?>
     </div>
 </div>
