@@ -2,6 +2,48 @@ html {
     font-family: Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;
 }
 
+nav{
+    position: fixed;
+    top: 0;
+    left:0;
+    right: 0;
+    background-color: #4da3d6;
+    margin:0;
+    color: white;
+    box-shadow: black 0 0 5px;
+}
+
+nav a{
+    text-decoration: none;
+    color: white;
+
+}
+
+nav h1{
+    float: left;
+    font-size: 1.2rem;
+    margin: 0;
+    padding: 10px;
+}
+
+nav ul{
+    float: right;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li{
+    display: inline-block;
+    margin: 0;
+    padding: 10px;
+    border-left: 1px solid #cccccc;
+}
+
+main{
+    margin-top: 50px;
+}
+
+
 label{
     display: block;
 }
@@ -31,7 +73,7 @@ label{
 .post .actions a{
     text-decoration: none;
     color: white;
-    background-color: blue;
+    background-color: #4da3d6;
     padding: 5px;
     border-radius: 3px;
 }

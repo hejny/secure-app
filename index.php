@@ -15,13 +15,10 @@ if($_REQUEST['action']=='logout'){
     <title>Super secure social network</title>
     <link rel="stylesheet" type="text/css" href="./style.css">
 </head>
-<body>
-    <h1>"Super secure" social network</h1>
-
+<body>   
     <nav>
+        <a href="?page=wall"><h1>👍 "Super secure" social network</h1></a>
         <ul>
-            <a href="?page=wall"><li>Wall</li></a>
-
             <?php if(!$_SESSION['id']){ ?>
             <a href="?page=login"><li>Login</li></a>
             <a href="?page=register"><li>Register</li></a>
@@ -30,10 +27,8 @@ if($_REQUEST['action']=='logout'){
             <?php } ?>
         </ul>
     </nav>
-
-
+    <main>
     <?php
-
         $pagefile = __DIR__."/pages/{$_GET['page']}.php";
 
         if(!file_exists($pagefile)){
@@ -43,10 +38,7 @@ if($_REQUEST['action']=='logout'){
         require $pagefile;
     
     ?>
-
-
-
-
+    </main>
 </body>
 </html>
 

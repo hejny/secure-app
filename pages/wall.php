@@ -64,8 +64,10 @@ foreach($result as $row){
         </span>
         <?php } ?>
 
-        <?php if($_SESSION['id']==$row['user_id']){ ?>
+        <?php if($_SESSION['id']){ ?>
             <a href="?page=wall&amp;like=<?=$row['id']?>">Like</a>
+        <?php } ?>
+        <?php if($_SESSION['id']==$row['user_id']){ ?>
             <a href="?page=wall&amp;delete=<?=$row['id']?>" onclick="return confirm('Are you sure?')">Delete</a>
         <?php } ?>
     </div>
