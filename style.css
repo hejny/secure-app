@@ -48,7 +48,7 @@ label{
     display: block;
 }
 
-.success, .error{
+.success, .error, .debug{
     padding: 5px;
 }
 
@@ -58,6 +58,11 @@ label{
 
 .error{
     background-color: #ff0000;
+}
+
+.debug{
+    background-color: #000066;
+    color: white;
 }
 
 .post{

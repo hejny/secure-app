@@ -18,7 +18,18 @@ if($_SESSION['id']){
 if($_REQUEST['like']){
 if($_SESSION['id']){
     try {
-        $db->query("INSERT INTO users_posts_like (user_id,post_id) VALUES ({$_SESSION['id']},{$_REQUEST['like']})");
+        $sql = "INSERT INTO users_posts_like (user_id,post_id) VALUES ({$_SESSION['id']},{$_REQUEST['like']})";
+        if(DEBUG)echo('<div class="debug">'.htmlspecialchars($sql).'</div>');
+        $db->query($sql);
+
+        /*
+        $sql = "INSERT INTO users_posts_like (user_id,post_id) VALUES (:user_id,:post_id})";
+        $query = $db->prepare($sql);
+        $query->bindParam(':user_id', $_SESSION['id']);
+        $query->bindParam(':post_id', $_REQUEST['like']);
+        $query->execute();
+        */
+
      } catch (PDOException $error) {
         if ($error->errorInfo[1] == 1062) {
             echo('<div class="error">You have already voted.</div>');
